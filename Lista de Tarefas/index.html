@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Lista de Tarefas</title>
+</head>
+<body>
+    <div id="general">
+    <section id="principal">
+        <div class="conteudo">
+            <img src="img/perfil.png" alt="Foto de perfil">
+            <br>
+            <h1 style="margin: 10px 0px 5px 0px;">José da Silva</h1>
+            <p>Amante da tecnologia e empreendedor.<br> Apaixonado por inovação e sempre<br> em busca de novos desafios.
+            <br> Acredito no poder da colaboração <br>e na importância de aprender algo novo <br>todos os dias. Nas horas vagas,
+            <br>adoro viajar, ler livros de ficção <br>científica e cozinhar pratos diferentes. </p>
+            
+            <ul class="links">
+                <li><a href="#">Link1</a></li>
+                <li><a href="#">Link2</a></li>
+                <li><a href="#">Link3</a></li>
+                <li><a href="#">Link4</a></li>
+            </ul>
+        </div> 
+    </section>
+   
+    <div id="container">
+        <div>
+            <h1 class="title">Lista de Tarefas</h1>
+        </div>
+        <div class="conteudo-lista">
+        <div class="item">
+            <h2 style="margin-bottom: 15px; margin-top: 15px; text-align: center;">Dia</h2>
+            <form onsubmit="addTask('dia'); return false;" class="task">
+                <input type="text" id="task-input-dia" placeholder="Nova tarefa">
+                <button type="submit">Adicionar Tarefa</button>
+            </form>
+            <ol class="tasks" id="task-list-dia">
+                <!-- Lista de tarefas dinâmicas -->
+            </ol>
+        </div>
+        <div class="item">
+            <h2 style="margin-bottom: 15px; margin-top: 15px; text-align: center;">Noite</h2>
+            <form onsubmit="addTask('noite'); return false;" class="task">
+                <input type="text" id="task-input-noite" placeholder="Nova tarefa">
+                <button type="submit">Adicionar Tarefa</button>
+            </form>
+            <ol class="tasks" id="task-list-noite">
+                <!-- Lista de tarefas dinâmicas -->
+            </ol>
+        </div>
+        </div>
+    </div>
+
+    <script>
+        function addTask(periodo) {
+            const inputId = `task-input-${periodo}`;
+            const listId = `task-list-${periodo}`;
+            const input = document.getElementById(inputId);
+            const taskText = input.value.trim();
+
+            if (taskText) {
+                const listItem = document.createElement('li');
+                
+                const textSpan = document.createElement('span');
+                textSpan.textContent = taskText;
+                listItem.appendChild(textSpan);
+                
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Remover';
+                removeButton.onclick = function() {
+                    listItem.remove();
+                };
+
+                listItem.appendChild(removeButton);
+                document.getElementById(listId).appendChild(listItem);
+                input.value = '';
+            }
+        }
+    </script>
+
+</body>
+</html>

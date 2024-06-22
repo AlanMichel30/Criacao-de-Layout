@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+#principal {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+#general{
+    padding: 2% 2% 2% 2%;
+    margin-left: -10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.title {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.tabela{
+    display: flex;
+    align-items: flex-start;
+}
+
+img {
+    border-radius: 360px;
+    width: 200px;
+    height: 200px;
+}
+
+ul.links {
+    list-style: none;
+    padding: 0;
+}
+
+ul.links li {
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+#container {
+    width: 60%;
+    background-color: #D3D3D3;
+    border-radius: 10px;
+    padding: 15px;
+    margin-right: -145px;
+}
+
+.conteudo {
+    text-align: center;
+    margin: 0px 0px 0px 0px;
+    width: 40%;
+}
+.conteudo-lista{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.item {
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 10px;
+    float: left;
+    padding: 0 00px;
+    margin: 0;
+    width: 45%;
+}
+
+
+ul {
+    margin: 0px 0px 0px 0;
+}
+
+li {
+    margin: 24px 5px;
+}
+
+
+input {
+    padding: 8px 5px;
+    border-radius: 5px;
+    width: 60%;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 30%;
+}
+
+ol.tasks {
+    list-style-type: none;
+    padding-left: 0px;
+    margin: 15px;
+    width: 70%;
+
+}
+
+ol.tasks li {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 25px;
+}
+
+ol.tasks li button {
+    position: absolute;
+    background-color: #dc3545;
+    right: -35%;
+    bottom: 0%;
+}
+
+ol.tasks li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #333;
+    border-radius: 50%; 
+}
+
+form.task {
+    margin: 20px;
+    width: 100%;
+}
+
+ol.tasks li span {
+    max-width: 8%; /* Define o tamanho máximo do span para permitir a quebra de linha */
+    word-wrap: break-word; /* Permite a quebra de palavras longas */
+}
+
+
